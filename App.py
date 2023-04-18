@@ -6,6 +6,8 @@ from Bio.Align import MultipleSeqAlignment
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from Bio.Phylo.TreeConstruction import DistanceCalculator, DistanceTreeConstructor
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 
@@ -70,7 +72,7 @@ def draw_tree(alignment):
     # Plot tree using matplotlib
     fig, ax = plt.subplots(figsize=(8, 8))
     Phylo.draw(tree, axes=ax, show_confidence=False)
-    plt.show()
+    fig.show()
 
 
 if __name__ == '__main__':
